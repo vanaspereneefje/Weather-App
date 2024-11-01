@@ -18,7 +18,6 @@ async function handleCitySearch(cityName) {
 
     clearPreviousForecasts()
 
-    // Use weatherData to update your UI
     updateWeatherDisplay(weatherData);
 
   } catch (error) {
@@ -181,11 +180,8 @@ async function unsplashImages(cityName) {
     const response = await fetch(`https://api.unsplash.com/search/photos?client_id=y7-dcvc-iP4s1AgoQ07Iem-cmsn3Ouh41LO-ExKUFLo&query=${cityName}`);
     const data = await response.json();
 
-    console.log(data);
-
     const getAllImages = data.results[0];
     const getImage = getAllImages.urls.regular;
-    console.log(getImage);
 
     const previousImage = document.querySelectorAll(".city-image");
     previousImage.forEach(result => result.remove());
