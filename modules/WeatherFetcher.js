@@ -16,7 +16,7 @@ export default class WeatherFetcher {
             const dayAmount = 5;
             const weatherPictograms = []
 
-            const descriptionResponse = await fetch('../descriptions.json');
+            const descriptionResponse = await fetch('https://vanaspereneefje.github.io/Weather-App/data/descriptions.json');
             const descriptionData = await descriptionResponse.json();
             
             const weatherDescriptionDay = descriptionData[currentWeatherCode];
